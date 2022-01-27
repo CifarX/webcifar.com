@@ -1,0 +1,45 @@
+{
+	"name": "webcifar",
+	"version": "1.1.0",
+	"private": true,
+	"description": "web cifar",
+	"author": "arfan",
+	"keywords": [
+		"webcifar"
+	],
+	"scripts": {
+		"develop": "gatsby develop",
+		"start": "gatsby develop",
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"@agney/react-loading": "^0.1.2",
+		"@fontsource/inter": "^4.5.1",
+		"@fontsource/poppins": "^4.5.0",
+		"axios": "^0.25.0",
+		"babel-plugin-styled-components": "^2.0.2",
+		"dotenv": "^14.2.0",
+		"gatsby": "^4.5.3",
+		"gatsby-plugin-google-gtag": "^4.5.0",
+		"gatsby-plugin-image": "^2.5.2",
+		"gatsby-plugin-manifest": "^4.5.2",
+		"gatsby-plugin-react-helmet": "^5.5.0",
+		"gatsby-plugin-sharp": "^4.5.2",
+		"gatsby-plugin-styled-components": "^5.5.0",
+		"gatsby-source-filesystem": "^4.5.2",
+		"gatsby-source-sanity": "^7.3.2",
+		"gatsby-transformer-sharp": "^4.5.0",
+		"gsap": "^3.9.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-helmet": "^6.1.0",
+		"react-hot-toast": "^2.2.0",
+		"react-icons": "^4.3.1",
+		"react-scroll": "^1.8.4",
+		"react-transition-group": "^4.4.2",
+		"styled-components": "^5.3.3",
+		"swiper": "^7.4.1"
+	}
+}
