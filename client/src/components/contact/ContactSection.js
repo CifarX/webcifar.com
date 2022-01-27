@@ -65,7 +65,7 @@ export default function ContactSection() {
         axios.post(baseUrl, data, {
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Origin': 'https://dev-webcifar.netlify.app',
           },
         }),
         {
