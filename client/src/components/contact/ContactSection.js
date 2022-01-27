@@ -61,11 +61,19 @@ export default function ContactSection() {
     const dataArr = Object.entries(values).filter(([, value]) => value !== '');
     const data = Object.fromEntries(dataArr);
     try {
-      toast.promise(axios.post(baseUrl, data), {
-        loading: 'Sending...',
-        success: 'Your message has been sent!',
-        error: 'Something went wrong, please try again later',
-      });
+      toast.promise(
+        axios.post(baseUrl, data, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          },
+        }),
+        {
+          loading: 'Sending...',
+          success: 'Your message has been sent!',
+          error: 'Something went wrong, please try again later',
+        }
+      );
     } catch (err) {
       console.log(err);
     } finally {
