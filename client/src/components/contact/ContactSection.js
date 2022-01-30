@@ -1,3 +1,4 @@
+import validator from 'validator';
 import React, { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import toast from 'react-hot-toast';
@@ -14,7 +15,7 @@ export default function ContactSection() {
     email: '',
     subject: '',
     project_type: '',
-    estimated_budget: '',
+    estimated_budget: 500,
     details: '',
   });
   const {
@@ -57,23 +58,51 @@ export default function ContactSection() {
       honeypotReset();
       return;
     }
-    const baseUrl = 'https://wcifar.pythonanywhere.com/send_email/';
-    const dataArr = Object.entries(values).filter(([, value]) => value !== '');
-    const data = Object.fromEntries(dataArr);
-    try {
-      toast.promise(
-        axios.post(baseUrl, data, {
-          headers: {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dev-webcifar.netlify.app',
-          },
-        }),
-        {
-          loading: 'Sending...',
-          success: 'Your message has been sent!',
-          error: 'Something went wrong, please try again later',
-        }
+
+    // get the data
+    const data = {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      details: values.details,
+    };
+    if (values.subject === 'hire') {
+      data.project_type = values.project_type;
+      data.estimated_budget = values.estimated_budget;
+    }
+    const dataArr = Object.entries(data);
+
+    // check if all fields are filled correctly
+    const emptyFields = dataArr.filter(([, value]) => {
+      const trimmedValue = value.toString().trim();
+      return (
+        trimmedValue === '' || trimmedValue === null || trimmedValue === ' '
       );
+    });
+    if (emptyFields.length > 0) {
+      toast.error(
+        `${emptyFields.map((item) => `${item[0]}`).join(', ')} can't be empty`
+      );
+      honeypotReset();
+      return;
+    }
+    // check if email is valid
+    if (values.email) {
+      if (validator.isEmail(values.email) === false) {
+        toast.error('Please enter a valid email');
+        return;
+      }
+    }
+
+    // finally send the form
+    const dataObj = Object.fromEntries(dataArr);
+    const baseUrl = process.env.GATSBY_EMAIL_URL;
+    try {
+      toast.promise(axios.post(baseUrl, dataObj), {
+        loading: 'Sending...',
+        success: 'Your message has been sent!',
+        error: 'Something went wrong, please try again later',
+      });
     } catch (err) {
       console.log(err);
     } finally {
