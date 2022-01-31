@@ -96,7 +96,8 @@ export default function ContactSection() {
 
     // finally send the form
     const dataObj = Object.fromEntries(dataArr);
-    const baseUrl = process.env.GATSBY_EMAIL_URL;
+    // const baseUrl = process.env.GATSBY_EMAIL_URL;
+    const baseUrl = '/.netlify/functions/sendMail';
     try {
       toast.promise(axios.post(baseUrl, dataObj), {
         loading: 'Sending...',
