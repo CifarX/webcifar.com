@@ -12,7 +12,8 @@
 		"start": "gatsby develop",
 		"build": "gatsby build",
 		"serve": "gatsby serve",
-		"clean": "gatsby clean"
+		"clean": "gatsby clean",
+		"netlify-dev": "netlify dev"
 	},
 	"dependencies": {
 		"@agney/react-loading": "^0.1.2",
