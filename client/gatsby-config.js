@@ -68,5 +68,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: '@sentry/gatsby',
+      options: {
+        dsn: process.env.SENTRY_DSN,
+        sampleRate: 0.3,
+      },
+    },
   ],
 };

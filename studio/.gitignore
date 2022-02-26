@@ -13,3 +13,6 @@ node_modules
 
 # settings
 .vscode
+
+# env
+.env.development
