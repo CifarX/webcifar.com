@@ -37,10 +37,10 @@ export const NavbarStyles = styled.div`
           display: inline-block;
           height: 100%;
           font-size: 1.8rem;
-          font-family: Inter;
-          font-weight: 400;
+          font-family: Inter, sans-serif;
+          font-weight: 500;
           color: var(--whiteBlue-1);
-          padding: 1rem 2rem;
+          padding: 0.8rem 1.5rem;
           cursor: pointer;
           transition: 0.2s ease;
           transition-property: color, background-color;
@@ -74,7 +74,6 @@ export const NavbarStyles = styled.div`
       margin-top: 0.5rem;
       border-radius: 12px;
       position: absolute;
-      /* opacity: 0; */
       left: 0;
       top: 100%;
       background-color: var(--blackBlue-6);

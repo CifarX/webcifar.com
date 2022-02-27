@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ParagraphStyles = styled.p`
   font-family: 'Inter';
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.5em;
   text-align: center;
   color: var(--whiteBlue-4);

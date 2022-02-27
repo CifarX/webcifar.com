@@ -57,7 +57,6 @@ export const AboutStyles = styled.div`
     .paragraph {
       margin-top: 1rem;
       text-align: left;
-      color: var(--blue-3);
     }
     .about__stack {
       margin-top: 3rem;

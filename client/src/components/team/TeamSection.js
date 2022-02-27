@@ -5,56 +5,7 @@ import gsap from 'gsap';
 import Paragraph from '../typography/Paragraph';
 import SectionTitle from '../typography/SectionTitle';
 import TeamItem from './TeamItem';
-import TriangleImg from '../../assets/images/triangle.svg';
-
-const TeamSectionStyles = styled.div`
-  padding: 10rem 0;
-  .team__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .title {
-    text-align: center;
-  }
-  .heading {
-    margin-bottom: 3rem;
-    .paragraph {
-      color: var(--blue-3);
-      font-size: 1.8rem;
-      font-family: Inter;
-      font-weight: 300;
-    }
-  }
-`;
-
-const BgEl = styled.div`
-  position: relative;
-  .bg {
-    position: absolute;
-    width: 80vw;
-    height: 80vw;
-    min-width: 300px;
-    min-height: 300px;
-    max-width: 800px;
-    max-height: 800px;
-    background: url(${TriangleImg}) no-repeat center / contain;
-    /* background: red; */
-    left: -10%;
-    top: 30%;
-    z-index: -1;
-  }
-  @media only screen and (max-width: 1100px) {
-    .bg {
-      top: 45%;
-      left: -25%;
-    }
-  }
-`;
+import { TeamBgEl, TeamSectionStyles } from './Team.styles';
 
 export default function TeamSection() {
   const {
@@ -122,8 +73,9 @@ export default function TeamSection() {
       }
     );
   }, []);
+
   return (
-    <BgEl>
+    <TeamBgEl>
       <div className="bg" />
       <TeamSectionStyles>
         <div className="heading">
@@ -144,6 +96,6 @@ export default function TeamSection() {
           {/* <TeamItem /> */}
         </div>
       </TeamSectionStyles>
-    </BgEl>
+    </TeamBgEl>
   );
 }
