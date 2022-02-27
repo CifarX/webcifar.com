@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import toast from 'react-hot-toast';
 import axios from 'axios';
-import SectionTitle from '../SectionTitle';
-import Paragraph from '../Paragraph';
+import SectionTitle from '../typography/SectionTitle';
+import Paragraph from '../typography/Paragraph';
 import useForm from '../../utils/useForm';
 import { ContactSectionStyles } from './ContactSection.styles';
 
@@ -14,7 +14,7 @@ export default function ContactSection() {
     email: '',
     subject: '',
     project_type: '',
-    estimated_budget: 500,
+    estimated_budget: '',
     details: '',
   });
   const {
@@ -58,7 +58,17 @@ export default function ContactSection() {
       return;
     }
     const baseUrl = '/.netlify/functions/sendMail';
-    toast.promise(axios.post(baseUrl, values), {
+    const formValues = {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      details: values.details,
+    };
+    if (values.subject === 'hire') {
+      formValues.project_type = values.project_type;
+      formValues.estimated_budget = values.estimated_budget;
+    }
+    toast.promise(axios.post(baseUrl, formValues), {
       loading: 'Sending...',
       success: 'Your message has been sent!',
       error: (err) => {
@@ -75,7 +85,9 @@ export default function ContactSection() {
       <div className="container">
         <SectionTitle>Hire & Inquiry</SectionTitle>
         <div className="contact__subtitle">
-          <Paragraph>Drop us a text we would love to hear from you</Paragraph>
+          <Paragraph className="paragraph">
+            Drop us a text we would love to hear from you
+          </Paragraph>
         </div>
         <div className="form__wrapper">
           <form onSubmit={handleSubmit} ref={formRef}>

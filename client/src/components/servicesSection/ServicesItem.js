@@ -1,5 +1,5 @@
 import React from 'react';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 import Icon from '../../assets/images/services_icons/Icon1.svg';
 import { ServiceItemStyles } from './ServicesSection.styles';
 
@@ -14,7 +14,7 @@ export default function ServicesItem({
         <img src={icon} alt="icon" />
       </div>
       <h4 className="title">{title}</h4>
-      <Paragraph>{desc}</Paragraph>
+      <Paragraph className="paragraph">{desc}</Paragraph>
     </ServiceItemStyles>
   );
 }

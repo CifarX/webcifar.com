@@ -13,8 +13,6 @@ import ServicesSection from '../components/servicesSection/ServicesSection';
 import TeamSection from '../components/team/TeamSection';
 import TestimonialsSection from '../components/testimonials/TestimonialsSection';
 import WorksSection from '../components/worksSection/WorksSection';
-import GlobalStyles from '../styles/GlobalStyles';
-import Typography from '../styles/Typography';
 import AboutSection from '../components/aboutSection/AboutSection';
 import Loaders from '../components/Loaders';
 import Seo from '../components/Seo';
@@ -24,7 +22,7 @@ const LayoutStyles = styled.div`
   overflow-x: hidden;
 `;
 
-export default function Home({ location }) {
+export default function Home() {
   const [loading, setLoading] = useState(true);
   const appEl = useRef(null);
 
@@ -38,7 +36,7 @@ export default function Home({ location }) {
   }, []);
   return (
     <LayoutStyles>
-      <Seo title="Home" location={location} />
+      <Seo />
       <Toaster
         position="bottom-right"
         toastOptions={{
@@ -47,14 +45,10 @@ export default function Home({ location }) {
           },
         }}
       />
-      <GlobalStyles />
-      <Typography />
       {loading ? (
         <Loaders />
       ) : (
         <div ref={appEl} className="app">
-          {/* <Loaders /> */}
-          <Navbar />
           <HeroSection />
           <ServicesSection />
           <WorksSection />
@@ -64,7 +58,6 @@ export default function Home({ location }) {
           <AboutSection />
           <TeamSection />
           <ContactSection />
-          <Footer />
         </div>
       )}
     </LayoutStyles>

@@ -86,7 +86,7 @@ export const WorkItemStyles = styled.div`
     padding: 0.5rem 1rem;
     border-radius: 5px;
     display: inline-block;
-    .Paragraph {
+    .paragraph {
       text-align: left;
       text-transform: capitalize;
       font-size: 1.4rem;
@@ -107,7 +107,7 @@ export const WorkItemStyles = styled.div`
   }
   .project__client {
     margin-top: 1rem;
-    .Paragraph {
+    .paragraph {
       text-transform: capitalize;
       font-size: 1.6rem;
       text-align: left;
@@ -117,7 +117,7 @@ export const WorkItemStyles = styled.div`
   }
   .project__stack {
     margin-top: 0.4rem;
-    .Paragraph {
+    .paragraph {
       font-size: 1.4rem;
       text-align: left;
       font-weight: 400;

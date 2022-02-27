@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { IoLogoJavascript, IoLogoPython } from 'react-icons/io5';
 import { SiPostgresql } from 'react-icons/si';
-import SectionTitle from '../SectionTitle';
-import Paragraph from '../Paragraph';
+import SectionTitle from '../typography/SectionTitle';
+import Paragraph from '../typography/Paragraph';
 import groupPic from '../../assets/images/group_pic.png';
 import aboutImg from '../../assets/images/about_img.jpg';
 import { AboutStyles } from './AboutSection.styles';
@@ -48,8 +48,8 @@ export default function AboutSection() {
           </div>
         </div>
         <div className="about__right">
-          <SectionTitle>About The Team</SectionTitle>
-          <Paragraph>
+          <SectionTitle className="title">About The Team</SectionTitle>
+          <Paragraph className="paragraph">
             We are a team of some creative people who make websites with
             passion. Most of the members of this team are from Bangladesh. In
             web cifar, we are a family. Here, Everyone is a master of a specific

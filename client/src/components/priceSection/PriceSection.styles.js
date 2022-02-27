@@ -36,13 +36,12 @@ export const PriceSectionStyles = styled.div`
   }
   .price__left__wrapper {
     max-width: 80%;
-    /* .title {
-      font-size: clamp(2.5rem, 5vw, 5rem);
-    } */
-    .Paragraph {
+    .title {
       text-align: left;
-      color: var(--blue-3);
-      margin-top: 2rem;
+    }
+    .paragraph {
+      text-align: left;
+      margin-top: 1rem;
     }
     .price__left__button {
       margin-top: 3rem;
@@ -71,7 +70,7 @@ export const PriceSectionStyles = styled.div`
       .title {
         text-align: center;
       }
-      .Paragraph {
+      .paragraph {
         text-align: center;
       }
     }

@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 import React from 'react';
 import styled from 'styled-components';
 
-const ButtonStyles = styled.div`
+const ButtonStyles = styled(Link)`
   display: inline-block;
   background: ${({ primary }) =>
     primary
@@ -12,16 +12,12 @@ const ButtonStyles = styled.div`
   position: relative;
   overflow: hidden;
   z-index: 1;
-  a {
-    display: inline-block;
-    font-size: clamp(1.8rem, 2vw, 2.2rem);
-    padding: 0.5em 2em;
-    color: var(--whiteBlue-2);
-    font-family: 'Inter';
-    font-weight: 400;
-    cursor: pointer;
-    /* z-index: 2; */
-  }
+  font-size: 1.8rem;
+  padding: 0.5em 1.2em;
+  color: var(--whiteBlue-2);
+  font-family: 'Poppins', 'sans-serif';
+  font-weight: 400;
+  cursor: pointer;
   &::before {
     content: '';
     position: absolute;
@@ -37,25 +33,14 @@ const ButtonStyles = styled.div`
   &:hover::before {
     width: 100%;
   }
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
-export default function Button({
-  primary = true,
-  btnLink = '#',
-  children,
-  type = 'Link',
-  handleClick = null,
-}) {
+export default function Button({ primary = true, children, tag, ...rest }) {
   return (
-    <ButtonStyles primary={primary}>
-      {type === 'a' ? (
-        <a href={btnLink} onClick={handleClick}>
-          {children}
-        </a>
-      ) : (
-        <Link to={btnLink} smooth onClick={handleClick}>
-          {children}
-        </Link>
-      )}
+    <ButtonStyles primary={primary} {...rest} as={tag}>
+      {children}
     </ButtonStyles>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 
 const TestimonialStyles = styled.div`
   background: var(--whiteBlue-2);
@@ -13,7 +13,7 @@ const TestimonialStyles = styled.div`
   }
   .item__desc {
     /* margin-top: -10px; */
-    .Paragraph {
+    .paragraph {
       color: var(--blue-2);
       font-family: Inter;
       font-weight: 400;
@@ -23,7 +23,7 @@ const TestimonialStyles = styled.div`
   }
   .item__name {
     margin-top: 3rem;
-    .Paragraph {
+    .paragraph {
       color: var(--blackBlue-5);
       font-size: 1.6rem;
       text-align: left;
@@ -31,7 +31,7 @@ const TestimonialStyles = styled.div`
     }
   }
   .item__title {
-    .Paragraph {
+    .paragraph {
       text-align: left;
       font-size: 1.4rem;
       color: var(--blue-4);
@@ -52,18 +52,18 @@ export default function TestimonialItem({ name, title, org, desc, country }) {
           style={{ width: '100px', height: '100px' }}
         />
         <div className="item__desc">
-          <Paragraph>"{desc}"</Paragraph>
+          <Paragraph className="paragraph">"{desc}"</Paragraph>
         </div>
         <div className="item__name">
-          <Paragraph>{name}</Paragraph>
+          <Paragraph className="paragraph">{name}</Paragraph>
         </div>
         <div className="item__title">
           {title !== null ? (
-            <Paragraph>
+            <Paragraph className="paragraph">
               {title} @ {org}
             </Paragraph>
           ) : (
-            <Paragraph>{country}</Paragraph>
+            <Paragraph className="paragraph">{country}</Paragraph>
           )}
         </div>
       </div>

@@ -16,7 +16,6 @@ const getData = (data) => {
 };
 
 const validateData = (reqData) => {
-  console.log(reqData);
   const reqDataArr = Object.entries(reqData);
   const emptyFields = reqDataArr.filter(([, value]) => {
     if (value === undefined) {
@@ -49,15 +48,13 @@ exports.handler = async function (event, context) {
   if (event.httpMethod === 'POST' && event.body) {
     const baseUrl = process.env.GATSBY_EMAIL_URL;
     const reqData = getData(JSON.parse(event.body));
-    const validationResult = validateData(reqData);
-    if (validationResult) {
-      return validationResult;
+    const validationErrors = validateData(reqData);
+    if (validationErrors) {
+      return validationErrors;
     }
     // send email
     try {
-      const res = await axios.post(baseUrl, {
-        ...JSON.parse(event.body),
-      });
+      const res = await axios.post(baseUrl, reqData);
       return {
         statusCode: res.status,
         body: JSON.stringify(res.data),

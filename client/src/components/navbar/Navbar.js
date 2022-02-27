@@ -87,7 +87,7 @@ export default function NavBar() {
                 </Link>
               </li>
               <li>
-                <Button btnLink="contact" primary handleClick={handleClick}>
+                <Button to="contact" primary onClick={handleClick} smooth>
                   Hire Us
                 </Button>
               </li>

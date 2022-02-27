@@ -13,13 +13,11 @@ export const ServiceItemStyles = styled.div`
     font-weight: 400;
     margin-top: 2rem;
   }
-  .Paragraph {
-    color: var(--blue-3);
-    font-size: 2rem;
+  .paragraph {
     margin-top: 1rem;
   }
   @media only screen and (max-width: 768px) {
-    .Paragraph {
+    .paragraph {
       font-size: 1.6rem;
     }
   }

@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import gsap from 'gsap';
-import Paragraph from '../Paragraph';
-import SectionTitle from '../SectionTitle';
+import Paragraph from '../typography/Paragraph';
+import SectionTitle from '../typography/SectionTitle';
 import TeamItem from './TeamItem';
 import TriangleImg from '../../assets/images/triangle.svg';
 
@@ -23,7 +23,7 @@ const TeamSectionStyles = styled.div`
   }
   .heading {
     margin-bottom: 3rem;
-    .Paragraph {
+    .paragraph {
       color: var(--blue-3);
       font-size: 1.8rem;
       font-family: Inter;
@@ -128,7 +128,9 @@ export default function TeamSection() {
       <TeamSectionStyles>
         <div className="heading">
           <SectionTitle>Team Members</SectionTitle>
-          <Paragraph>People Behind The Amazing Works</Paragraph>
+          <Paragraph className="paragraph">
+            People Behind The Amazing Works
+          </Paragraph>
         </div>
         <div className="team__wrapper" ref={animationEl}>
           {team.map((item) => (

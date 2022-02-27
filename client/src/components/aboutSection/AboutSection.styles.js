@@ -51,11 +51,12 @@ export const AboutStyles = styled.div`
     border-radius: 12px;
   }
   .about__right {
-    .Paragraph {
+    .title {
+      text-align: left;
+    }
+    .paragraph {
       margin-top: 1rem;
       text-align: left;
-      font-size: 2rem;
-      font-weight: 300;
       color: var(--blue-3);
     }
     .about__stack {

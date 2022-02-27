@@ -2,14 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeadingStyles = styled.h1`
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: 5rem;
+  font-weight: 700;
   color: var(--whiteBlue-1);
   letter-spacing: 0.05em;
   line-height: 1.2em;
   text-transform: capitalize;
-  font-weight: 900;
+  @media only screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
-export default function Heading1({ children }) {
+export default function HeroHeading({ children }) {
   return <HeadingStyles>{children}</HeadingStyles>;
 }

@@ -3,7 +3,7 @@ require('dotenv').config();
 const siteInfo = {
   title: 'Web Cifar',
   short_name: 'webcifar',
-  subTitle: 'Your complete web solution',
+  subTitle: 'We Create High Performance Websites',
   description: `A masterful team that executes engagement with accuracy, proficiency, and innovation.`,
 };
 

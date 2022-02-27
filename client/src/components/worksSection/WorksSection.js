@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { gsap } from 'gsap';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../typography/SectionTitle';
 import WorksItem from './WorksItem';
 import { WorksSectionBgEl, WorksSectionStyles } from './WorksSection.Styles';
 

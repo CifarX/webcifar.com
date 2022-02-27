@@ -36,19 +36,16 @@ export const ItemStyles = styled.div`
     }
   }
   .name {
-    .Paragraph {
+    .paragraph {
       color: var(--blue-1);
-      font-size: 2.5rem;
-      font-family: Inter;
-      font-weight: 900;
+      font-size: 1.8rem;
+      font-family: Poppins;
+      font-weight: 600;
     }
   }
   .title {
-    .Paragraph {
-      color: var(--blue-1);
-      font-size: 1.6rem;
-      font-family: Inter;
-      font-weight: 300;
+    .paragraph {
+      color: var(--blue-4);
     }
   }
 `;

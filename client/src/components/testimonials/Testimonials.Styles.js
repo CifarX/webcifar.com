@@ -23,8 +23,6 @@ export const TestimonialStyles = styled.div`
     }
   }
   .testimonial__title {
-    /* max-width: 00px; */
-    /* margin: 0 auto; */
     .title {
       line-height: 1.1em;
     }
@@ -32,12 +30,8 @@ export const TestimonialStyles = styled.div`
   .testimonial__subTitle {
     max-width: 600px;
     margin: 0 auto;
-    .Paragraph {
-      color: var(--blue-3);
+    .paragraph {
       margin-top: 1rem;
-      font-size: 1.8rem;
-      font-family: Inter;
-      font-weight: 300;
     }
   }
   .swiper {

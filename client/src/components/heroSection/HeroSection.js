@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Button from '../Button';
 import Heading from './HeroSectionTitle';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 import { HeroSectionBgElStyles, HeroSectionStyles } from './HeroSection.styles';
 
 export default function HeroSection() {
@@ -13,8 +13,7 @@ export default function HeroSection() {
   // animation
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
-    // console.log(leftEl);
-    tl.from(leftEl.current.querySelectorAll('div'), {
+    tl.from(leftEl.current.querySelectorAll('*'), {
       opacity: 0,
       y: 30,
       stagger: 0.2,
@@ -78,28 +77,21 @@ export default function HeroSection() {
               Websites
             </Heading>
           </div>
-          <Paragraph>
+          <Paragraph className="paragraph">
             A masterful team that executes engagement with accuracy,
             proficiency, and innovation.
           </Paragraph>
           <div className="hero__buttons">
-            <Button btnLink="works">See Works</Button>
-            <Button primary={false} btnLink="contact">
+            <Button to="works" smooth>
+              See Works
+            </Button>
+            <Button primary={false} to="contact" smooth>
               Hire Us
             </Button>
           </div>
         </div>
         <div className="hero__right">
           <div ref={heroRightImg} className="hero__right__img" />
-          {/* <StaticImage
-              width={800}
-              src="../assets/images/hero_img.svg"
-              alt="illustration"
-              placeholder="Blurred"
-              transformOptions={{ fit: 'contain' }}
-              quality={100}
-              // formats={['svg']}
-            /> */}
         </div>
       </div>
     </HeroSectionStyles>

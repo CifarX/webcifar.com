@@ -18,7 +18,7 @@ export const ContactSectionStyles = styled.div`
     color: var(--blue-3);
     max-width: 500px;
     margin: 0 auto;
-    .Paragraph {
+    .paragraph {
       font-size: 1.8rem;
     }
   }
@@ -184,7 +184,7 @@ export const ContactSectionStyles = styled.div`
       font-size: 2rem;
       text-align: left;
     }
-    .Paragraph {
+    .paragraph {
       margin-top: 0.5rem;
       text-align: left;
       color: var(--blue-3);
@@ -212,7 +212,7 @@ export const ContactSectionStyles = styled.div`
       h3 {
         font-size: 1.8rem;
       }
-      .Paragraph {
+      .paragraph {
         font-size: 1.4rem;
       }
     }

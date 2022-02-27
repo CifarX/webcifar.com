@@ -2,7 +2,7 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { GoLinkExternal } from 'react-icons/go';
 import worksImg from '../../assets/images/works_img.jpg';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 import { WorkItemStyles } from './WorksSection.Styles';
 
 export default function WorksItem({
@@ -22,17 +22,17 @@ export default function WorksItem({
         <div className="item__right">
           <div className="item__top">
             <div className="project__type">
-              <Paragraph>{type}</Paragraph>
+              <Paragraph className="paragraph">{type}</Paragraph>
             </div>
             <div className="project__title">
               <h3>{title}</h3>
             </div>
             <div className="project__stack">
-              <Paragraph>{stack.join(', ')} </Paragraph>
+              <Paragraph className="paragraph">{stack.join(', ')} </Paragraph>
             </div>
             {client ? (
               <div className="project__client">
-                <Paragraph>Client: {client}</Paragraph>
+                <Paragraph className="paragraph">Client: {client}</Paragraph>
               </div>
             ) : (
               ''

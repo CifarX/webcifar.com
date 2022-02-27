@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { graphql, useStaticQuery } from 'gatsby';
 import SwiperCore, { Navigation } from 'swiper';
 import gsap from 'gsap';
-import SectionTitle from '../SectionTitle';
+import SectionTitle from '../typography/SectionTitle';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import TestimonialItem from './TestimonialItem';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 import Video from '../video/Video';
 import {
   TestimonialStyles,
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
             </SectionTitle>
           </div>
           <div className="testimonial__subTitle">
-            <Paragraph>
+            <Paragraph className="paragraph">
               Client satisfaction is our main priority. We always welcome the
               positive feedback we receive from our clients. Here’s what they’re
               saying about us.

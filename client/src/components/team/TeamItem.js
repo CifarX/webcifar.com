@@ -1,6 +1,6 @@
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import Paragraph from '../Paragraph';
+import Paragraph from '../typography/Paragraph';
 import { ItemStyles } from './Team.styles';
 
 export default function TeamItem({
@@ -15,10 +15,10 @@ export default function TeamItem({
 
         <div className="info">
           <div className="name">
-            <Paragraph>{name}</Paragraph>
+            <Paragraph className="paragraph">{name}</Paragraph>
           </div>
           <div className="title">
-            <Paragraph>{title} </Paragraph>
+            <Paragraph className="paragraph">{title} </Paragraph>
           </div>
         </div>
       </div>

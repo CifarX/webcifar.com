@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Button from '../Button';
-import SectionTitle from '../SectionTitle';
-import Paragraph from '../Paragraph';
+import SectionTitle from '../typography/SectionTitle';
+import Paragraph from '../typography/Paragraph';
 import PriceCardSVG from './PriceCardSVG';
 import { PriceSectionBgEl, PriceSectionStyles } from './PriceSection.styles';
 
@@ -39,15 +39,17 @@ export default function PriceSection() {
         <div className="container">
           <div className="price__left">
             <div className="price__left__wrapper">
-              <SectionTitle>Get Website In Budget</SectionTitle>
-              <Paragraph>
+              <SectionTitle className="title">
+                Get Website In Budget
+              </SectionTitle>
+              <Paragraph className="paragraph">
                 Our main priority is the client’s interest. We like to keep our
                 approach flexible and have a focus on branding, design and web
                 development. We help people to create their dream website. Build
                 your desire website for your business at an affordable price.
               </Paragraph>
               <div className="price__left__button">
-                <Button btnLink="contact" primary>
+                <Button to="contact" primary smooth>
                   Get Now
                 </Button>
               </div>

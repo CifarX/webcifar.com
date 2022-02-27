@@ -19,9 +19,9 @@ export const HeroSectionStyles = styled.div`
   .hero__left {
     flex: 1;
   }
-  .hero__left .Paragraph {
+  .hero__left .paragraph {
+    max-width: 350px;
     margin-top: 1.5rem;
-    color: var(--blue-3);
     text-align: left;
   }
   .hero__right {
@@ -42,10 +42,11 @@ export const HeroSectionStyles = styled.div`
     /* background-color: red; */
   }
   .hero__buttons {
-    margin-top: 3rem;
-    div:nth-child(2) {
-      margin-left: 1.5rem;
-    }
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
   }
   @media only screen and (max-width: 768px) {
     .container {
@@ -58,7 +59,7 @@ export const HeroSectionStyles = styled.div`
     .hero__title {
       text-align: center;
     }
-    .hero__left .Paragraph {
+    .hero__left .paragraph {
       text-align: center;
     }
     .hero__right {
@@ -70,17 +71,7 @@ export const HeroSectionStyles = styled.div`
       width: 80vw;
     }
     .hero__buttons {
-      text-align: center;
-    }
-  }
-  @media only screen and (max-width: 480px) {
-    .hero__buttons {
-      text-align: center;
-    }
-    .hero__buttons {
-      div:nth-child(2) {
-        margin-top: 1.5rem;
-      }
+      justify-content: center;
     }
   }
 `;

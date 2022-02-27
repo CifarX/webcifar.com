@@ -38,7 +38,9 @@ export default function ContactBanner() {
         <div className="banner__wrapper">
           <h2 className="banner__title">Have a project in mind ?</h2>
           <div className="banner__button">
-            <Button btnLink="contact">Contact Now</Button>
+            <Button to="contact" smooth>
+              Contact Now
+            </Button>
           </div>
         </div>
       </div>
