@@ -4,10 +4,9 @@ import styled from 'styled-components';
 
 const ButtonStyles = styled(Link)`
   display: inline-block;
-  background: ${({ primary }) =>
-    primary
-      ? 'linear-gradient(90deg, #4d2cd2, #3a1db0);'
-      : 'var(--blackBlue-2)'};
+  background: ${({ primary }) => (primary
+    ? 'linear-gradient(90deg, #4d2cd2, #3a1db0);'
+    : 'var(--blackBlue-2)')};
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -37,7 +36,9 @@ const ButtonStyles = styled(Link)`
     font-size: 1.5rem;
   }
 `;
-export default function Button({ primary = true, children, tag, ...rest }) {
+export default function Button({
+  primary = true, children, tag, ...rest
+}) {
   return (
     <ButtonStyles primary={primary} {...rest} as={tag}>
       {children}
