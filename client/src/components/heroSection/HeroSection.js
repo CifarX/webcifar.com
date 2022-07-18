@@ -89,9 +89,6 @@ export default function HeroSection() {
             proficiency, and innovation.
           </Paragraph>
           <div className="hero__buttons">
-            <Button onClick={() => toast.success('hola')}>
-              See Works
-            </Button>
             <Button to="works" smooth>
               See Works
             </Button>
