@@ -1,6 +1,7 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import toast from 'react-hot-toast';
 import Button from '../Button';
 import Heading from './HeroSectionTitle';
 import Paragraph from '../typography/Paragraph';
@@ -26,7 +27,7 @@ export default function HeroSection() {
         y: 30,
         duration: 1,
       },
-      '-=1.5'
+      '-=1.5',
     );
   }, []);
 
@@ -73,7 +74,13 @@ export default function HeroSection() {
         <div ref={leftEl} className="hero__left">
           <div className="hero__title">
             <Heading>
-              We create high <br /> performance <br />
+              We create high
+              {' '}
+              <br />
+              {' '}
+              performance
+              {' '}
+              <br />
               Websites
             </Heading>
           </div>
@@ -82,6 +89,9 @@ export default function HeroSection() {
             proficiency, and innovation.
           </Paragraph>
           <div className="hero__buttons">
+            <Button onClick={() => toast.success('hola')}>
+              See Works
+            </Button>
             <Button to="works" smooth>
               See Works
             </Button>
